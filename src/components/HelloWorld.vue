@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <!-- <h1>{{ msg }}</h1> -->
+    <h1>{{ msg }}</h1>
         <form name="todo-form" method="post" action="" v-on:submit.prevent="addTask">
     <input name="add-todo" type="text" v-model="addTodoInput" v-on:keyup.enter="submit"/>
     <button type="submit">Add</button>
@@ -11,8 +11,7 @@
             <li v-for="list in lists" :key="list.id">
               <span  v-bind:class="{completed: list.isComplete}">{{list.title}}</span>
             </li>
-          </ul>
-       
+          </ul>     
     <ul>
       <li>
         <a
@@ -45,11 +44,13 @@
 
 <script>
 export default {
-	data: {
-    	name: 'HelloWorld',
-		msg: 'Welcome to Your Vue.js to-do list App',
-		addTodoInput: '', // <--- add here
-		lists: [],
+	data: function() {
+		return {
+			name: 'Hello World',
+			msg: 'Welcome to Your Vue.js to-do list App',
+			addTodoInput: '', // <--- add here
+			lists: [],
+		};
 	},
 	methods: {
 		addTask: function() {

@@ -10,6 +10,7 @@
         v-model="addTodoInput"
         name="add-todo"
         type="text"
+        class="effect-1"
         @keyup.enter="submit">
       <button type="submit">Add</button>
     </form>
@@ -19,7 +20,7 @@
         <li
           v-for="list in lists"
           :key="list.id">
-          <p> :class="{completed: list.isComplete}">{{ list.title }}</p>
+          <p :class="{completed: list.isComplete}">{{ list.title }}</p>
         </li>
       </ul>
       <ul>
@@ -100,5 +101,27 @@ input[type='text'] {
 
 :focus {
   outline: none;
+}
+
+.effect-1,
+.effect-2,
+.effect-3 {
+  border: 0;
+  padding: 7px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.effect-1 ~ .focus-border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #4caf50;
+  transition: 0.4s;
+}
+.effect-1:focus ~ .focus-border {
+  width: 100%;
+  transition: 0.4s;
 }
 </style>

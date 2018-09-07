@@ -19,7 +19,7 @@
         <li
           v-for="list in lists"
           :key="list.id">
-          <span :class="{completed: list.isComplete}">{{ list.title }}</span>
+          <p> :class="{completed: list.isComplete}">{{ list.title }}</p>
         </li>
       </ul>
       <ul>
@@ -89,5 +89,16 @@ li {
 }
 a {
   color: #42b983;
+}
+
+input[type='text'] {
+  font: 15px/24px 'Muli', sans-serif;
+  color: #333;
+  width: 30%;
+  letter-spacing: 1px;
+}
+
+:focus {
+  outline: none;
 }
 </style>

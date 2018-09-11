@@ -19,8 +19,9 @@
       <ul>
         <li
           v-for="list in lists"
-          :key="list.id">
-          <p :class="{completed: list.isComplete}">{{ list.title }}</p>
+          :key="list.id"
+          :class="{completed: list.isComplete}">
+          {{ list.title }}
         </li>
       </ul>
       <ul>
